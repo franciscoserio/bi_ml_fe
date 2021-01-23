@@ -1,0 +1,36 @@
+.topbar .icons{
+  cursor: pointer;
+}
+
+.topbar{
+  margin-left: 70px;
+  margin-top: 10px;
+  margin-right: 35px;
+}
+
+.topbar hr{
+  border: 1px solid #cfcccc;
+}
+
+.topbar .title{
+  display: inline-block;
+}
+
+.topbar .title h1{
+  margin-left: 50px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 35px;
+  font-weight: bold;
+  color: #cfcccc
+}
+
+.topbar .signout{
+  float: right;
+}
+
+.topbar .signout img{
+  margin-right: 40px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}

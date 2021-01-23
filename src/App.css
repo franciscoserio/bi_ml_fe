@@ -1,0 +1,13 @@
+.dashboard-grid{
+  margin-left: 100px;
+  margin-right: 30px;
+}
+
+.x{
+  border-color: grey;
+  border-style: solid;
+  border-width: 0;
+  border-radius: 8px;
+  box-shadow: 0px 0px 3px 0px grey;
+  text-align: center;
+}
