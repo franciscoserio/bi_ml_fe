@@ -41,7 +41,7 @@ class Dashboard extends Component {
     };
     
     axios.get(
-      "http://localhost:8090/api/checklogin",
+      "http://localhost:8000/api/authentication/check",
       config
     )
     .then(response => {

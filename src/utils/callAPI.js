@@ -2,7 +2,7 @@ import Cookies from 'universal-cookie';
 import axios from "axios";
 
 // API host
-const host = 'http://localhost:8090';
+const host = 'http://localhost:8000';
 
 // Get cookies
 const cookies = new Cookies();
@@ -84,7 +84,7 @@ export default {
     // Get all tenants
     getTenants: () => {
         return axios.get(
-            host + "/api/tenant",
+            host + "/api/tenants",
             header
           )
     },
@@ -92,17 +92,17 @@ export default {
     // Check login
     checkLogin: () => {
         return axios.get(
-            host + "/api/checklogin",
+            host + "/api/authentication/check",
             header
           )
     },
 
     // Login
-    Login: (username, password) => {
+    Login: (email, password) => {
         return axios.post(
-            host + "/api/auth/signin",
+            host + "/api/authentication",
             {
-                username: username,
+                email: email,
                 password: password
             },
             {
