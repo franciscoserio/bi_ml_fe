@@ -14,31 +14,11 @@ class Tools extends Component {
     super(props);
 
     this.state = {
-      loading: 1
+      loading: 0
     };
   }
 
   componentWillMount(){
-    
-    API.checkLogin()
-    .then(response => {
-      console.log("error");
-      if (response.status != 401)
-      {
-        this.setState({loading: 0});
-      }
-      else
-      {
-        window.location = '/login';
-      }
-      
-    })
-    .catch(error => {
-      if (error.response["status"] == 401)
-      {
-        window.location = '/login';
-      }
-    });
 
   }
 

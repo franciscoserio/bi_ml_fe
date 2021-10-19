@@ -2,11 +2,12 @@ import Cookies from 'universal-cookie';
 import axios from "axios";
 
 // API host
-const host = 'http://localhost:8000';
+const host = 'http://localhost:8080';
 
 // Get cookies
 const cookies = new Cookies();
 const token = 'Bearer '.concat(cookies.get('token'))
+const tenant = '14043f3e-5d20-4a26-8170-8f0593cbabe3'
 
 // Get headers
 const header = {
@@ -82,25 +83,25 @@ export default {
     },
 
     // Get all tenants
-    getTenants: () => {
+    getTenants: (limit, page) => {
         return axios.get(
-            host + "/api/tenants",
-            header
+            host + "/api/tenants?limit=" + limit + "&page=" + page,
+            header            
           )
     },
 
-    // Check login
-    checkLogin: () => {
+    // Get all devices
+    getDevices: (limit, page) => {
         return axios.get(
-            host + "/api/authentication/check",
-            header
+            host + "/api/" + tenant + "/devices?limit=" + limit + "&page=" + page,
+            header            
           )
     },
 
     // Login
     Login: (email, password) => {
         return axios.post(
-            host + "/api/authentication",
+            host + "/api/login",
             {
                 email: email,
                 password: password

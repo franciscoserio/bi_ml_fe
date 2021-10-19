@@ -30,9 +30,9 @@ class Tenants extends Component {
 
   render() {
     
-    return <div className="topbar">
+    return <div>
 
-              <div class="topbar">
+              <div className="topbar">
                 <div class="title">
                   <h1>{this.props.title}</h1>
                 </div>
@@ -41,9 +41,9 @@ class Tenants extends Component {
                   <a class="icons"><img src={notifications}height="35px" /></a>
                   <a class="icons" onClick={this.logout}><img src={signout} height="35px" /></a>
                 </div>
-                <hr />
+                
               </div>
-
+              <hr style = {{margin: 0}} />
             </div>;
   }
 }

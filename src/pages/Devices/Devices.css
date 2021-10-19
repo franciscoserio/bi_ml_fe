@@ -1,0 +1,61 @@
+.devices_page{
+    margin-left: 115px;
+    margin-top: 20px;
+    margin-right: 30px;
+}
+
+.devices_page .order-card {
+    color: #fff;
+}
+
+.devices_page .bg-c-blue {
+    background-color: #4099ff;
+}
+
+.devices_page .bg-c-green {
+    background-color: #2ed8b6;
+}
+
+.devices_page .bg-c-yellow {
+    background-color: #FFB64D;
+}
+
+.devices_page .bg-c-pink {
+    background-color: #FF5370;
+}
+
+
+.devices_page .card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(4,26,55,0.16);
+    box-shadow: 0px 0px 0px 0px rgba(4,26,55,0.16);
+    border: none;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.devices_page .card .card-block {
+    padding: 20px;
+}
+
+.devices_page .card .card-block h6 {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.devices_page .card .card-block span {
+    font-weight: normal;
+}
+
+.devices_page .order-card i {
+    font-size: 26px;
+}
+
+.devices_page .f-left {
+    float: left;
+}
+
+.devices_page .f-right {
+    float: right;
+}

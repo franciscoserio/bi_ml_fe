@@ -26,7 +26,7 @@ class Datasource extends Component {
 
     API.querying(this.props.dataSourceId, query)
       .then((res)=>{
-        if (res.status != 401)
+        if (res.status !== 401)
         {
           if (res.data["status"] == "success")
           {

@@ -25,38 +25,39 @@ class Dashboard extends Component {
 
     var grid = GridStack.init();
 
-    for (var i = 1; i < 20; i++)
-    {
-      grid.addWidget('<div><div class="x grid-stack-item-content">Item ' + i + '</div></div>', {width: 3, height: 3});
-    }
+    // for (var i = 1; i < 10; i++)
+    // {
+    //   grid.addWidget('<div><div class="x grid-stack-item-content">Item ' + i + '</div></div>', {width: 3, height: 3});
+    // }
   }
   
   componentWillMount(){
-    
-    const cookies = new Cookies();
-    const header = 'Bearer '.concat(cookies.get('token'))
+    this.setState({loading: 0});
+    this.constructGrid();
+    // const cookies = new Cookies();
+    // const header = 'Bearer '.concat(cookies.get('token'))
   
-    const config = {
-      headers: { 'Authorization': header }
-    };
+    // const config = {
+    //   headers: { 'Authorization': header }
+    // };
     
-    axios.get(
-      "http://localhost:8000/api/authentication/check",
-      config
-    )
-    .then(response => {
+    // axios.get(
+    //   "http://localhost:8000/api/authentication/check",
+    //   config
+    // )
+    // .then(response => {
 
-      if (response.status != 401)
-      {
-        this.setState({loading: 0});
-        this.constructGrid();
-      }
-      else
-      {
-        window.location = '/login';
-      }
+    //   if (response.status !== 401)
+    //   {
+    //     this.setState({loading: 0});
+    //     this.constructGrid();
+    //   }
+    //   else
+    //   {
+    //     window.location = '/login';
+    //   }
       
-    });
+    // });
 
   }
 
@@ -73,7 +74,7 @@ class Dashboard extends Component {
           <div>
           <Sidebar page = "Dashboard" />
           <Topbar title = "Dashboard" />
-          <div class="dashboard-grid grid-stack">
+          <div >
           </div>
           </div>}
 

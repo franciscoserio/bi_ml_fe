@@ -23,7 +23,7 @@ class Datasource extends Component {
 
     API.getDatasources()
       .then((res)=>{
-        if (res.status != 401)
+        if (res.status !== 401)
         {
           this.setState({datasources: res["data"]["datasources"]});
         }
@@ -38,7 +38,7 @@ class Datasource extends Component {
 
     API.getDatabases()
       .then((res)=>{
-        if (res.status != 401)
+        if (res.status !== 401)
         {
           this.setState({databases: res["data"]["databases"]});
         }
@@ -53,7 +53,7 @@ class Datasource extends Component {
     
     this.props.getSelectedDatasource(e.target.value);
 
-    if (e.target.value != 'Select')
+    if (e.target.value !== 'Select')
     {
       for (var i = 0; i < this.state.datasources.length; i++)
       {
@@ -156,7 +156,7 @@ class Datasource extends Component {
     if (password == ''){ $('#passwordNewConnection').css('border-color', 'red'); $('.errorAlertNewConnection').css('display', 'block'); }
     else{ $('#passwordNewConnection').css('border-color', 'rgb(207, 207, 207)'); }
 
-    if (name != '' && sgbd != 'Database' && host != '' && port != '' && database != '' && user != '' && password != '')
+    if (name !== '' && sgbd !== 'Database' && host !== '' && port !== '' && database !== '' && user !== '' && password !== '')
     {
       $('.connectionSuccess').css('display', 'none');
       $('.connectionError').css('display', 'none');
@@ -230,7 +230,7 @@ class Datasource extends Component {
     if (password == ''){ $('#passwordNewConnection').css('border-color', 'red'); $('.errorAlertNewConnection').css('display', 'block'); }
     else{ $('#passwordNewConnection').css('border-color', 'rgb(207, 207, 207)'); }
 
-    if (name != '' && sgbd != 'Database' && host != '' && port != '' && database != '' && user != '' && password != '')
+    if (name !== '' && sgbd !== 'Database' && host !== '' && port !== '' && database !== '' && user !== '' && password !== '')
     {
       $('.connectionSuccess').css('display', 'none');
       $('.connectionError').css('display', 'none');

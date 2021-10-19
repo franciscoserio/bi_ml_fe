@@ -8,6 +8,7 @@ import UserDetails from "./pages/Users/UserDetails/UserDetails";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Tenants from "./pages/Tenants/Tenants";
 import Login from "./pages/Login/Login";
+import Devices from "./pages/Devices/Devices";
 
 function App(){
 
@@ -16,10 +17,12 @@ function App(){
           <Route exact path="/tools/predictions" component={Predictions} />
           <Route exact path="/tools" component={Tools} />
           <Route exact path="/users" component={Users} />
-          <Route exact path="/users/id" component={UserDetails} />
+          <Route exact path="/users/:user_id" component={UserDetails} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/tenants" component={Tenants} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/Devices" component={Devices} />
+          <Route exact path="/Devices/:device_id" component={Devices} />
         </div>
     );
 }

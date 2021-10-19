@@ -1,0 +1,56 @@
+.mdb-datatable table {
+    border-collapse: separate; 
+    border-spacing: 0px 10px;
+}
+.mdb-datatable table tbody td {
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    
+    background-color: white;
+}
+
+.mdb-datatable table tbody td:first-child {
+    border-left: 1px solid #ccc;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.mdb-datatable table tbody td:last-child {
+    border-right: 1px solid #ccc;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.deviceListStatus {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+
+.deviceListStatus .activeStatus {
+    color: green;
+    margin: 0px;
+    padding: 0px;
+}
+
+.deviceListStatus .inactiveStatus {
+    color: red;
+    margin: 0px;
+    padding: 0px;
+}
+
+.greenSphere {
+    background-color: green;
+    height: 14px;
+    width: 14px;
+    border-radius: 14px;
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+.redSphere {
+    background-color: red;
+    height: 14px;
+    width: 14px;
+    border-radius: 14px;
+    margin-right: 10px;
+    margin-top: 3px;
+}

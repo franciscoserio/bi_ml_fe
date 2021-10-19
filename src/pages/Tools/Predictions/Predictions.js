@@ -19,7 +19,7 @@ class Predictions extends Component {
     super(props);
 
     this.state = {
-      loading: 1,
+      loading: 0,
       chosenDatasource: "Select",
       query: "",
       predictionColumn: "Select"
@@ -27,22 +27,6 @@ class Predictions extends Component {
   }
 
   componentWillMount(){
-    
-    API.checkLogin()
-      .then(response => {
-        if (response.status != 401)
-        {
-          this.setState({loading: 0});
-        }
-        else
-        {
-          window.location = '/login';
-        }
-        
-      })
-      .catch(error => {
-        window.location = '/login';
-      });
 
   }
 
@@ -113,16 +97,16 @@ class Predictions extends Component {
                 />
 
                 {this.state.predictionColumn === "Select" ?
-                  <Steps onClick1 = {this.state.chosenDatasource != "Select" ? handleClickQuerying : handleClickNone }
+                  <Steps onClick1 = {this.state.chosenDatasource !== "Select" ? handleClickQuerying : handleClickNone }
                         number = "2"
                         description = "Querying"
                         bar = "1"
-                        numberColor = {this.state.chosenDatasource != "Select" ? "red" : "grey" }
-                        borderNumberColor = {this.state.chosenDatasource != "Select" ? "red" : "grey" }
-                        borderColorBar = {this.state.chosenDatasource != "Select" ? "red" : "grey" }
+                        numberColor = {this.state.chosenDatasource !== "Select" ? "red" : "grey" }
+                        borderNumberColor = {this.state.chosenDatasource !== "Select" ? "red" : "grey" }
+                        borderColorBar = {this.state.chosenDatasource !== "Select" ? "red" : "grey" }
                   />
                   :
-                  <Steps onClick1 = {this.state.chosenDatasource != "Select" ? handleClickQuerying : handleClickNone }
+                  <Steps onClick1 = {this.state.chosenDatasource !== "Select" ? handleClickQuerying : handleClickNone }
                           number = "2"
                           description = "Querying"
                           bar = "1"
@@ -130,13 +114,13 @@ class Predictions extends Component {
                           borderNumberColor = "green"
                           borderColorBar = "green"
                   />}
-                <Steps onClick1 = {this.state.predictionColumn != "Select" ? handleClickGraphic : handleClickNone }
+                <Steps onClick1 = {this.state.predictionColumn !== "Select" ? handleClickGraphic : handleClickNone }
                        number = "3"
                        description = "Graphic"
                        bar = "1"
-                       numberColor = {this.state.predictionColumn != "Select" ? "red" : "grey" }
-                       borderNumberColor = {this.state.predictionColumn != "Select" ? "red" : "grey" }
-                       borderColorBar = {this.state.predictionColumn != "Select" ? "red" : "grey" }
+                       numberColor = {this.state.predictionColumn !== "Select" ? "red" : "grey" }
+                       borderNumberColor = {this.state.predictionColumn !== "Select" ? "red" : "grey" }
+                       borderColorBar = {this.state.predictionColumn !== "Select" ? "red" : "grey" }
                 />
 
                 <Steps onClick1={handleClickConfirmation} number = "4" description = "Confirmation" bar = "0" numberColor = "grey" borderNumberColor = "grey" borderColorBar = "grey" />

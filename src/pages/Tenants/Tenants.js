@@ -7,6 +7,7 @@ import see from '../../assets/see.svg';
 import './Tenants.css';
 import $ from 'jquery';
 import API from '../../utils/callAPI';
+import { CompareArrowsOutlined } from '@material-ui/icons';
 
 class Tenants extends Component {
   
@@ -16,7 +17,10 @@ class Tenants extends Component {
     this.state = {
       loading: 1,
       loadingTenants: 1,
-      tenants: null
+      tenants: null,
+      limit: 100,
+      page: 1,
+      totalPages: null
     };
   }
 
@@ -35,39 +39,52 @@ class Tenants extends Component {
 
   getTenants(){
 
-    API.getTenants()
+    var tenantList = []
+    var totalPages = null
+
+    API.getTenants(this.state.limit.toString(), this.state.page.toString())
       .then((res)=>{
-        if (res.status != 401)
+        if (res.status !== 401)
         {
-          this.setState({tenants: res["data"]["tenants"]});
-          this.setState({loadingTenants: 0});
-          this.jqueryAnimations();
-        }
-        else
+          
+          totalPages = res["data"]["total_pages"]
+          tenantList.push(...res["data"]["data"])
+
+          // get the rest of the data
+          if (totalPages > 1) {
+            for (var i = 2; i <= totalPages; i++) {
+
+              API.getTenants(this.state.limit.toString(), i.toString())
+                .then((res)=>{
+                  if (res.status !== 401)
+                  {
+                    tenantList.push(...res["data"]["data"])
+                    this.setState({tenants: tenantList});
+                    this.jqueryAnimations();
+
+                  } else
+                  {
+                    window.location = '/login';
+                  }
+                })
+              }
+            }
+
+        } else
         {
           window.location = '/login';
         }
       })
+
+      this.setState({tenants: tenantList});
+      this.setState({loadingTenants: 0});
+      this.jqueryAnimations();
   }
 
   componentWillMount(){
     
-    API.checkLogin()
-      .then(response => {
-        if (response.status != 401)
-        {
-          this.setState({loading: 0});
-          this.getTenants();
-        }
-        else
-        {
-          window.location = '/login';
-        }
-        
-      })
-      .catch(error => {
-        window.location = '/login';
-      });
+    this.getTenants();
+    this.setState({loading: 0});
 
   }
 

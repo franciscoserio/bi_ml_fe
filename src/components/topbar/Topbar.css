@@ -3,13 +3,11 @@
 }
 
 .topbar{
-  margin-left: 70px;
-  margin-top: 10px;
-  margin-right: 35px;
-}
-
-.topbar hr{
-  border: 1px solid #cfcccc;
+  padding-left: 140px;
+  padding-top: 20px;
+  padding-right: 70px;
+  padding-bottom: 20px;
+  background-color: white;
 }
 
 .topbar .title{

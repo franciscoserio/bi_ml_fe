@@ -36,7 +36,6 @@ export default class Login extends Component {
 
             // set cookies with token and roles
             cookies.set('token', response["data"]["token"], { maxAge: 31536000 });
-            cookies.set('roles', response["data"]["roles"], { maxAge: 31536000 });
 
             window.location = '/tenants';
         }
