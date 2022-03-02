@@ -1,37 +1,37 @@
-.users_page{
-    margin-left: 115px;
-    margin-top: 20px;
-    margin-right: 30px;
+.users_page {
+  margin-left: 115px;
+  margin-top: 20px;
+  margin-right: 30px;
 }
 
-.users_page .users_box{
-    width: 300px;
-    height: 300px;
-    border: 1px solid #cfcccc;
-    border-radius: 10px;
-    box-shadow: 0px 0px 3px 0px #cfcccc;
-    margin: 10px;
-    float: left;
-    text-align: center;
-    line-height: 300px;
-    padding: 10px;
-    cursor: pointer;
+.users_page .users_box {
+  width: 300px;
+  height: 300px;
+  border: 1px solid #cfcccc;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px 0px #cfcccc;
+  margin: 10px;
+  float: left;
+  text-align: center;
+  line-height: 300px;
+  padding: 10px;
+  cursor: pointer;
 }
 
-.users_page .users_box:hover{
-    box-shadow: 0px 0px 10px 0px #cfcccc;
+.users_page .users_box:hover {
+  box-shadow: 0px 0px 10px 0px #cfcccc;
 }
 
-.users_page .users_box .img_tool{
-    border-radius: 150px;
-    margin-top: -80px;
-    margin-bottom: 0;
+.users_page .users_box .img_tool {
+  border-radius: 150px;
+  margin-top: -80px;
+  margin-bottom: 0;
 }
 
-.users_page .users_box p{
-    font-size: 25px;
-    line-height: 25px;
-    margin-top: -70px;
-    margin-bottom: 0;
-    color: grey;
+.users_page .users_box p {
+  font-size: 25px;
+  line-height: 25px;
+  margin-top: -70px;
+  margin-bottom: 0;
+  color: grey;
 }

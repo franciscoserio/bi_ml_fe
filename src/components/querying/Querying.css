@@ -1,55 +1,56 @@
-.queryingWrapper{
-    display: none;
+.queryingWrapper {
+  display: none;
 }
 
-.queryingWrapper .title{
-    font-size: 18px;
-    font-weight: bold;
-    color: grey;
+.queryingWrapper .title {
+  font-size: 18px;
+  font-weight: bold;
+  color: grey;
 }
 
-.queryingWrapper textarea{
-    background: white;
-    border: 1px solid rgb(207, 207, 207);
-    border-radius: 5px;
+.queryingWrapper textarea {
+  background: white;
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 5px;
 }
 
-.queryingWrapper textarea:focus{
-    background: white;
-    border: 1px solid rgb(207, 207, 207);
-    border-radius: 5px;
+.queryingWrapper textarea:focus {
+  background: white;
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 5px;
 }
 
-.queryingWrapper .queryButtonWrapper{
-    float: right;
-    margin-top: 15px;
+.queryingWrapper .queryButtonWrapper {
+  float: right;
+  margin-top: 15px;
 }
 
-.queryingWrapper .queryButtonWrapper .runQuery, .queryingWrapper .queryButtonWrapper .runQueryLoading{
-    margin-right: 5px;
-    margin-left: 5px;
-    width: 100px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+.queryingWrapper .queryButtonWrapper .runQuery,
+.queryingWrapper .queryButtonWrapper .runQueryLoading {
+  margin-right: 5px;
+  margin-left: 5px;
+  width: 100px;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
-.queryingWrapper .queryButtonWrapper .runQueryLoading{
-    display: none;
+.queryingWrapper .queryButtonWrapper .runQueryLoading {
+  display: none;
 }
 
-.queryingWrapper .queriyngTable{
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-    transform-origin: 0 0;
+.queryingWrapper .queriyngTable {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  transform-origin: 0 0;
 }
 
-.queryingWrapper .queriyngTable tr{
-    border-radius: 85px;
-    text-align: center;
-    color: grey;
+.queryingWrapper .queriyngTable tr {
+  border-radius: 85px;
+  text-align: center;
+  color: grey;
 }
 
-.errorAlertQuerying p{
-    margin: 0;
+.errorAlertQuerying p {
+  margin: 0;
 }

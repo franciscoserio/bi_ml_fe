@@ -23,11 +23,11 @@
   cursor: pointer;
 }
 
-.sidenav img{
+.sidenav img {
   margin-bottom: 8px;
 }
 
-.sidenav .description{
+.sidenav .description {
   display: inline-block;
   margin-top: -10px;
   vertical-align: text-top;
@@ -36,7 +36,7 @@
   font-size: 23px;
 }
 
-.sidenav .description p{
+.sidenav .description p {
   margin-top: 7px;
   margin-bottom: 0;
   opacity: 0;
@@ -50,20 +50,20 @@
   margin-left: 5px;
 }
 
-.menu_chosed{
+.menu_chosed {
   background-color: white;
   margin-left: 5px;
   border-radius: 5px 5px 5px 5px;
 }
 
-.menu_chosed p{
+.menu_chosed p {
   color: black;
 }
 
-.logo_user{
+.logo_user {
   border-radius: 100px;
 }
 
-.logouser{
+.logouser {
   color: white;
 }

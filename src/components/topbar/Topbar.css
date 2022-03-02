@@ -1,8 +1,8 @@
-.topbar .icons{
+.topbar .icons {
   cursor: pointer;
 }
 
-.topbar{
+.topbar {
   padding-left: 140px;
   padding-top: 20px;
   padding-right: 70px;
@@ -10,24 +10,24 @@
   background-color: white;
 }
 
-.topbar .title{
+.topbar .title {
   display: inline-block;
 }
 
-.topbar .title h1{
+.topbar .title h1 {
   margin-left: 50px;
   margin-top: 0px;
   margin-bottom: 0px;
   font-size: 35px;
   font-weight: bold;
-  color: #cfcccc
+  color: #cfcccc;
 }
 
-.topbar .signout{
+.topbar .signout {
   float: right;
 }
 
-.topbar .signout img{
+.topbar .signout img {
   margin-right: 40px;
   margin-top: 10px;
   margin-bottom: 0px;

@@ -1,143 +1,147 @@
-.users_page .content{
-    margin-left: 50px;
-    margin-right: 50px;
+.users_page .content {
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
-.nav-tabs{
-    margin-left: 60px;
+.nav-tabs {
+  margin-left: 60px;
 }
 
-.tab-content{
-    border: 1px #dee2e6 solid;
-    border-radius: 10px 10px 10px 10px;
+.tab-content {
+  border: 1px #dee2e6 solid;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .nav-tabs .nav-link {
-    color: #495057;
-    background-color: rgb(250, 250, 250);
-    border-color: #dee2e6;
-    margin-left: 5px;
+  color: #495057;
+  background-color: rgb(250, 250, 250);
+  border-color: #dee2e6;
+  margin-left: 5px;
 }
 
-.users_page .img_logo{
-    border-radius: 150px;
-    margin-top: 30px;
+.users_page .img_logo {
+  border-radius: 150px;
+  margin-top: 30px;
 }
 
-.users_page .status{
-    margin-right: 70px;
-    margin-top: 10px;
-    font-size: 22px;
-    font-weight: bold;
-    color: rgb(94, 94, 94);;
+.users_page .status {
+  margin-right: 70px;
+  margin-top: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  color: rgb(94, 94, 94);
 }
 
-.users_page .status_switch{
-    margin-top: 17px;
-    font-size: 22px;
-    color: rgb(94, 94, 94);;
+.users_page .status_switch {
+  margin-top: 17px;
+  font-size: 22px;
+  color: rgb(94, 94, 94);
 }
 
-.form-check-input:checked{
-    background-color: green;
-    border-color: green;
+.form-check-input:checked {
+  background-color: green;
+  border-color: green;
 }
 
-.users_page .info_user h3{
-    color: rgb(94, 94, 94);
-    font-size: 25px;
-    font-weight: bold;
-    margin-top: 20px;
-    text-align: left;
+.users_page .info_user h3 {
+  color: rgb(94, 94, 94);
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: left;
 }
 
-.users_page .info_user p{
-    color: grey;
-    font-size: 20px;
-    font-weight: normal;
-    margin-top: 20px;
+.users_page .info_user p {
+  color: grey;
+  font-size: 20px;
+  font-weight: normal;
+  margin-top: 20px;
 }
 
-.users_page .input-group input{
-    margin-bottom: 20px;
-    background: white;
-    border: 1px solid rgb(207, 207, 207);
-    border-radius: 5px;
+.users_page .input-group input {
+  margin-bottom: 20px;
+  background: white;
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 5px;
 }
 
-.users_page .input-group input:focus{
-    background: white;
-    border: 1px solid rgb(207, 207, 207);
-    border-radius: 5px;
+.users_page .input-group input:focus {
+  background: white;
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 5px;
 }
 
-.users_page #profile-tab, .users_page #tenant-tab{
-    color: rgb(80, 79, 79);
-    font-size: 20px;
-    font-weight: normal;
+.users_page #profile-tab,
+.users_page #tenant-tab {
+  color: rgb(80, 79, 79);
+  font-size: 20px;
+  font-weight: normal;
 }
 
-.users_page #profile-tab .img_logo, .users_page #tenant-tab .img_logo{
-    margin-top: -3px;
-    margin-right: 10px;
+.users_page #profile-tab .img_logo,
+.users_page #tenant-tab .img_logo {
+  margin-top: -3px;
+  margin-right: 10px;
 }
 
-.users_page .info_user button, .users_page .submit_permissions button{
-    margin-right: 5px;
-    margin-left: 5px;
-    width: 100px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+.users_page .info_user button,
+.users_page .submit_permissions button {
+  margin-right: 5px;
+  margin-left: 5px;
+  width: 100px;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
-.users_page .submit, .users_page .submit_permissions{
-    text-align: right;
+.users_page .submit,
+.users_page .submit_permissions {
+  text-align: right;
 }
 
-.users_page .permissions{
-    width: 100%;
-    border-collapse: separate; 
-    border-spacing: 0 15px;
-    border-radius: 50%;
-    margin-bottom: 15px;
+.users_page .permissions {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  border-radius: 50%;
+  margin-bottom: 15px;
 }
 
-.users_page .permissions th{
-    font-size: 20px;
-    color: rgb(80, 79, 79);
-    font-weight: bold;
-    padding: 10px;
+.users_page .permissions th {
+  font-size: 20px;
+  color: rgb(80, 79, 79);
+  font-weight: bold;
+  padding: 10px;
 }
 
-.users_page .permissions td{
-    border: solid 2px rgb(184, 184, 184);
-    font-size: 20px;
-    border-style: solid none;
-    color: rgb(80, 79, 79);
-    font-weight: bold;
-    padding: 10px;
-    background-color: rgb(253, 252, 252);
+.users_page .permissions td {
+  border: solid 2px rgb(184, 184, 184);
+  font-size: 20px;
+  border-style: solid none;
+  color: rgb(80, 79, 79);
+  font-weight: bold;
+  padding: 10px;
+  background-color: rgb(253, 252, 252);
 }
 
 .users_page .permissions td:first-child {
-    border-left-style: solid;
-    border-top-left-radius: 10px; 
-    border-bottom-left-radius: 10px;
+  border-left-style: solid;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 .users_page .permissions td:last-child {
-    border-right-style: solid;
-    border-bottom-right-radius: 10px; 
-    border-top-right-radius: 10px; 
+  border-right-style: solid;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-.users_page .permissions .permission_switch{
-    margin-left: -30px;
+.users_page .permissions .permission_switch {
+  margin-left: -30px;
 }
 
-.users_page h1{
-    color: grey;
-    font-size: 30px;
-    margin-top: 40px;
-    margin-bottom: 10px;
-    font-weight: bold;
+.users_page h1 {
+  color: grey;
+  font-size: 30px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-weight: bold;
 }

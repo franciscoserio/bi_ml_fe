@@ -1,28 +1,28 @@
-.steps_wrapper{
+.steps_wrapper {
   display: inline-block;
   margin-top: 10px;
   text-align: center;
 }
 
-.steps_wrapper .steps_center{
+.steps_wrapper .steps_center {
   margin: 0 auto;
 }
 
-.steps_wrapper .steps_center .bar{
+.steps_wrapper .steps_center .bar {
   display: inline-block;
   margin-bottom: 40px;
   border-top: 3px solid red;
   width: 100px;
 }
 
-.steps_wrapper .step_number{
+.steps_wrapper .step_number {
   display: inline-block;
   margin-right: 10px;
   margin-left: 10px;
   cursor: pointer;
 }
 
-.steps_wrapper .step_number .number{
+.steps_wrapper .step_number .number {
   border-radius: 50%;
   text-align: center;
   border-color: red;
@@ -36,7 +36,7 @@
   margin: 0 auto;
 }
 
-.steps_wrapper .step_number .description{
+.steps_wrapper .step_number .description {
   margin-top: 5px;
   color: grey;
   margin: 0 auto;

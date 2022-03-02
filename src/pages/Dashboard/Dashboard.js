@@ -1,28 +1,24 @@
-import React, {Component} from 'react';
-import Sidebar from '../../components/sidebar/Sidebar'
-import Topbar from '../../components/topbar/Topbar'
-import Loading from '../../components/loading/Loading'
-import './Dashboard.css';
-import { Responsive, WidthProvider } from 'react-grid-layout';
-import Cookies from 'universal-cookie';
-import axios from "axios";
-import { GridStack } from 'gridstack';
-import 'gridstack/dist/gridstack.css';
+import React, { Component } from "react";
+import Sidebar from "../../components/sidebar/Sidebar";
+import Topbar from "../../components/topbar/Topbar";
+import Loading from "../../components/loading/Loading";
+import "./Dashboard.css";
+import { Responsive, WidthProvider } from "react-grid-layout";
+import { GridStack } from "gridstack";
+import "gridstack/dist/gridstack.css";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 class Dashboard extends Component {
-  
   constructor(props) {
     super(props);
 
     this.state = {
-      loading: 1
+      loading: 1,
     };
   }
 
-  constructGrid(){ 
-
+  constructGrid() {
     var grid = GridStack.init();
 
     // for (var i = 1; i < 10; i++)
@@ -30,17 +26,17 @@ class Dashboard extends Component {
     //   grid.addWidget('<div><div class="x grid-stack-item-content">Item ' + i + '</div></div>', {width: 3, height: 3});
     // }
   }
-  
-  componentWillMount(){
-    this.setState({loading: 0});
-    this.constructGrid();
+
+  componentWillMount() {
+    this.setState({ loading: 0 });
+    // this.constructGrid();
     // const cookies = new Cookies();
     // const header = 'Bearer '.concat(cookies.get('token'))
-  
+
     // const config = {
     //   headers: { 'Authorization': header }
     // };
-    
+
     // axios.get(
     //   "http://localhost:8000/api/authentication/check",
     //   config
@@ -56,30 +52,26 @@ class Dashboard extends Component {
     //   {
     //     window.location = '/login';
     //   }
-      
-    // });
 
+    // });
   }
 
   render() {
-
     const { loading } = this.state;
-    
+
     return (
-        <div>
-
-          {this.state.loading == 1 ?
+      <div>
+        {this.state.loading === 1 ? (
           <Loading />
-          :
+        ) : (
           <div>
-          <Sidebar page = "Dashboard" />
-          <Topbar title = "Dashboard" />
-          <div >
+            <Sidebar page="Dashboard" />
+            <Topbar title="Dashboard" />
+            <div></div>
           </div>
-          </div>}
-
-        </div>
-    )
+        )}
+      </div>
+    );
   }
 }
 

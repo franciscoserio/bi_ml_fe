@@ -1,63 +1,65 @@
-.alert{
-    text-align: center;
-    display: none;
+.alert {
+  text-align: center;
+  display: none;
 }
 
-.datasourceWrapper .title{
-    font-size: 18px;
-    font-weight: bold;
-    color: grey;
+.datasourceWrapper .title {
+  font-size: 18px;
+  font-weight: bold;
+  color: grey;
 }
 
-.datasourceWrapper .custom-select{
-    margin-bottom: 20px;
+.datasourceWrapper .custom-select {
+  margin-bottom: 20px;
 }
 
-.datasourceWrapper .datasourceButtonWrapper{
-    float: right;
+.datasourceWrapper .datasourceButtonWrapper {
+  float: right;
 }
 
-.datasourceWrapper span{
-    width: 100px;
+.datasourceWrapper span {
+  width: 100px;
 }
 
-.datasourceWrapper .datasourceButtonWrapper .saveDatasourceButton, .datasourceWrapper .datasourceButtonWrapper .testDatasourceButton{
-    margin-right: 5px;
-    margin-left: 5px;
-    width: 100px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+.datasourceWrapper .datasourceButtonWrapper .saveDatasourceButton,
+.datasourceWrapper .datasourceButtonWrapper .testDatasourceButton {
+  margin-right: 5px;
+  margin-left: 5px;
+  width: 100px;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
-.datasourceWrapper #saveDatasourceButtonLoading, .datasourceWrapper #testDatasourceButtonLoading{
-    display: none;
+.datasourceWrapper #saveDatasourceButtonLoading,
+.datasourceWrapper #testDatasourceButtonLoading {
+  display: none;
 }
 
-.datasourceWrapper .datasourceButtonWrapper .hiddenButton{
-    display: none;
+.datasourceWrapper .datasourceButtonWrapper .hiddenButton {
+  display: none;
 }
 
-.datasourceWrapper .datasourceButtonWrapper .connectionSuccess{
-    color: green;
-    display: none;
-    margin-right: 20px;
+.datasourceWrapper .datasourceButtonWrapper .connectionSuccess {
+  color: green;
+  display: none;
+  margin-right: 20px;
 }
 
-.datasourceWrapper .datasourceButtonWrapper .connectionError{
-    color: red;
-    display: none;
-    margin-right: 20px;
+.datasourceWrapper .datasourceButtonWrapper .connectionError {
+  color: red;
+  display: none;
+  margin-right: 20px;
 }
 
-.datasourceWrapper input{
-    margin-bottom: 20px;
-    background: white;
-    border: 1px solid rgb(207, 207, 207);
-    border-radius: 5px;
+.datasourceWrapper input {
+  margin-bottom: 20px;
+  background: white;
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 5px;
 }
 
-.datasourceWrapper input:focus{
-    background: white;
-    border: 1px solid rgb(207, 207, 207);
-    border-radius: 5px;
+.datasourceWrapper input:focus {
+  background: white;
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 5px;
 }
