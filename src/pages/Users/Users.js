@@ -30,19 +30,19 @@ class Users extends Component {
             <Sidebar page="Tenants" />
             <Topbar title="Users" />
 
-            <div class="users_page">
-              <div class="users_box">
-                <img class="img_tool" src={logo} width="150px" />
+            <div className="users_page">
+              <div className="users_box">
+                <img className="img_tool" src={logo} width="150px" />
                 <p>Francisco Sério</p>
               </div>
 
-              <div class="users_box">
-                <img class="img_tool" src={logo} width="150px" />
+              <div className="users_box">
+                <img className="img_tool" src={logo} width="150px" />
                 <p>João Maria</p>
               </div>
 
-              <div class="users_box">
-                <img class="img_tool" src={logo} width="150px" />
+              <div className="users_box">
+                <img className="img_tool" src={logo} width="150px" />
                 <p>Manuel Sousa</p>
               </div>
             </div>

@@ -32,19 +32,19 @@ class Tools extends Component {
             <Sidebar page="Tenants" />
             <Topbar title="Tools" />
 
-            <div class="tools_page">
-              <div class="tools_box">
-                <img class="img_tool" src={detect_anomalies} width="230px" />
+            <div className="tools_page">
+              <div className="tools_box">
+                <img className="img_tool" src={detect_anomalies} width="230px" />
                 <p>Detect anomalies</p>
               </div>
 
-              <div class="tools_box">
-                <img class="img_tool" src={pattern_recognition} width="230px" />
+              <div className="tools_box">
+                <img className="img_tool" src={pattern_recognition} width="230px" />
                 <p>Pattern recognition</p>
               </div>
 
-              <div class="tools_box" onClick={this.goPredictionPage}>
-                <img class="img_tool" src={predictions} width="230px" />
+              <div className="tools_box" onClick={this.goPredictionPage}>
+                <img className="img_tool" src={predictions} width="230px" />
                 <p>Predictions</p>
               </div>
             </div>

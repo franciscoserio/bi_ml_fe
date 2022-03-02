@@ -23,7 +23,7 @@ class Dashboard extends Component {
 
     // for (var i = 1; i < 10; i++)
     // {
-    //   grid.addWidget('<div><div class="x grid-stack-item-content">Item ' + i + '</div></div>', {width: 3, height: 3});
+    //   grid.addWidget('<div><div className="x grid-stack-item-content">Item ' + i + '</div></div>', {width: 3, height: 3});
     // }
   }
 
@@ -79,7 +79,7 @@ class Dashboard extends Component {
 <div>
           <Sidebar page = "Dashboard" />
           <Topbar title = "Dashboard" />
-          <div class="dashboard-grid grid-stack">
+          <div className="dashboard-grid grid-stack">
           </div>
         </div>
 */

@@ -78,26 +78,26 @@ class Datasource extends Component {
           <div className="col">
             <p className="title">QUERY</p>
 
-            <div class="errorAlertQuerying alert alert-danger" role="alert">
+            <div className="errorAlertQuerying alert alert-danger" role="alert">
               <p></p>
             </div>
 
             <textarea
-              class="form-control"
+              className="form-control"
               id="query"
               rows="7"
               spellCheck="false"
             ></textarea>
 
-            <div class="queryButtonWrapper">
+            <div className="queryButtonWrapper">
               <button
                 onClick={this.handleOnClickRunQuery}
-                class="runQuery btn btn-success"
+                className="runQuery btn btn-success"
               >
                 Run
               </button>
-              <button class="runQueryLoading btn btn-success" disabled>
-                <div class="spinner-border spinner-border-sm"></div>
+              <button className="runQueryLoading btn btn-success" disabled>
+                <div className="spinner-border spinner-border-sm"></div>
               </button>
             </div>
           </div>

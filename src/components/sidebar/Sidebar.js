@@ -143,7 +143,7 @@ class Sidebar extends Component {
             <Link to={"/tenants"}>
               <img src={dashboard_white} width="40px" height="40px" />
               <div className="description">
-                <p class="tenants"></p>
+                <p className="tenants"></p>
               </div>
             </Link>
           )}

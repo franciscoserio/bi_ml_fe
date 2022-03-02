@@ -326,9 +326,9 @@ class Datasource extends Component {
 
             <p className="title">SAVED CONNECTIONS</p>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text" id="basic-addon1">
                   Datasource
                 </span>
               </div>
@@ -346,9 +346,9 @@ class Datasource extends Component {
               </select>
             </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text" id="basic-addon1">
                   SGBD
                 </span>
               </div>
@@ -364,9 +364,9 @@ class Datasource extends Component {
               </select>
             </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text" id="basic-addon1">
                   Host
                 </span>
               </div>
@@ -375,15 +375,15 @@ class Datasource extends Component {
                 value={this.state.savedConnectionHost}
                 onChange={this.handleOnChangeSavedConnectionHost}
                 type="text"
-                class="form-control"
+                className="form-control"
                 aria-label="Small"
                 aria-describedby="inputGroup-sizing-sm"
               />
             </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text" id="basic-addon1">
                   Port
                 </span>
               </div>
@@ -392,15 +392,15 @@ class Datasource extends Component {
                 value={this.state.savedConnectionPort}
                 onChange={this.handleOnChangeSavedConnectionPort}
                 type="text"
-                class="form-control"
+                className="form-control"
                 aria-label="Small"
                 aria-describedby="inputGroup-sizing-sm"
               />
             </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text" id="basic-addon1">
                   Database
                 </span>
               </div>
@@ -409,15 +409,15 @@ class Datasource extends Component {
                 value={this.state.savedConnectionDatabase}
                 onChange={this.handleOnChangeSavedConnectionDatabase}
                 type="text"
-                class="form-control"
+                className="form-control"
                 aria-label="Small"
                 aria-describedby="inputGroup-sizing-sm"
               />
             </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text" id="basic-addon1">
                   User
                 </span>
               </div>
@@ -426,15 +426,15 @@ class Datasource extends Component {
                 value={this.state.savedConnectionUser}
                 onChange={this.handleOnChangeSavedConnectionUser}
                 type="text"
-                class="form-control"
+                className="form-control"
                 aria-label="Small"
                 aria-describedby="inputGroup-sizing-sm"
               />
             </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text" id="basic-addon1">
                   Password
                 </span>
               </div>
@@ -443,7 +443,7 @@ class Datasource extends Component {
                 value={this.state.savedConnectionPassword}
                 onChange={this.handleOnChangeSavedConnectionPassword}
                 type="password"
-                class="form-control"
+                className="form-control"
                 aria-label="Small"
                 aria-describedby="inputGroup-sizing-sm"
               />
@@ -457,29 +457,29 @@ class Datasource extends Component {
             <p className="title">NEW CONNECTION</p>
 
             <div
-              class="successAlertNewConnection alert alert-success"
+              className="successAlertNewConnection alert alert-success"
               role="alert"
             >
               New data source created!
             </div>
 
             <div
-              class="errorAlertNewConnection alert alert-danger"
+              className="errorAlertNewConnection alert alert-danger"
               role="alert"
             >
               Some inputs are empty :(
             </div>
 
             <div
-              class="apiErrorAlertNewConnection alert alert-danger"
+              className="apiErrorAlertNewConnection alert alert-danger"
               role="alert"
             >
               An error has occured :( Please try again
             </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text" id="basic-addon1">
                   Name
                 </span>
               </div>
@@ -487,15 +487,15 @@ class Datasource extends Component {
                 id="nameNewConnection"
                 placeholder="Name"
                 type="text"
-                class="form-control"
+                className="form-control"
                 aria-label="Small"
                 aria-describedby="inputGroup-sizing-sm"
               />
             </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text" id="basic-addon1">
                   SGBD
                 </span>
               </div>
@@ -509,9 +509,9 @@ class Datasource extends Component {
               </select>
             </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text" id="basic-addon1">
                   Host
                 </span>
               </div>
@@ -519,15 +519,15 @@ class Datasource extends Component {
                 id="hostNewConnection"
                 placeholder="Host"
                 type="text"
-                class="form-control"
+                className="form-control"
                 aria-label="Small"
                 aria-describedby="inputGroup-sizing-sm"
               />
             </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text" id="basic-addon1">
                   Port
                 </span>
               </div>
@@ -535,15 +535,15 @@ class Datasource extends Component {
                 id="portNewConnection"
                 placeholder="Port"
                 type="number"
-                class="form-control"
+                className="form-control"
                 aria-label="Small"
                 aria-describedby="inputGroup-sizing-sm"
               />
             </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text" id="basic-addon1">
                   Database
                 </span>
               </div>
@@ -551,15 +551,15 @@ class Datasource extends Component {
                 id="databaseNewConnection"
                 placeholder="Database"
                 type="text"
-                class="form-control"
+                className="form-control"
                 aria-label="Small"
                 aria-describedby="inputGroup-sizing-sm"
               />
             </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text" id="basic-addon1">
                   User
                 </span>
               </div>
@@ -567,15 +567,15 @@ class Datasource extends Component {
                 id="userNewConnection"
                 placeholder="User"
                 type="text"
-                class="form-control"
+                className="form-control"
                 aria-label="Small"
                 aria-describedby="inputGroup-sizing-sm"
               />
             </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text" id="basic-addon1">
                   Password
                 </span>
               </div>
@@ -583,43 +583,43 @@ class Datasource extends Component {
                 id="passwordNewConnection"
                 placeholder="Password"
                 type="password"
-                class="form-control"
+                className="form-control"
                 aria-label="Small"
                 aria-describedby="inputGroup-sizing-sm"
               />
             </div>
 
-            <div class="datasourceButtonWrapper">
-              <button class="hiddenButton btn btn-success"></button>
-              <p class="connectionSuccess">Successful connection!</p>
-              <p class="connectionError">Connection error :(</p>
+            <div className="datasourceButtonWrapper">
+              <button className="hiddenButton btn btn-success"></button>
+              <p className="connectionSuccess">Successful connection!</p>
+              <p className="connectionError">Connection error :(</p>
               <button
                 onClick={this.handleOnClickSaveNewConnection}
                 id="saveDatasourceButton"
-                class="saveDatasourceButton btn btn-success"
+                className="saveDatasourceButton btn btn-success"
               >
                 Save
               </button>
               <button
                 id="saveDatasourceButtonLoading"
-                class="saveDatasourceButton btn btn-success"
+                className="saveDatasourceButton btn btn-success"
                 disabled
               >
-                <div class="spinner-border spinner-border-sm"></div>
+                <div className="spinner-border spinner-border-sm"></div>
               </button>
               <button
                 onClick={this.handleOnClickSaveTestConnection}
                 id="testDatasourceButton"
-                class="testDatasourceButton btn btn-warning"
+                className="testDatasourceButton btn btn-warning"
               >
                 Test
               </button>
               <button
                 id="testDatasourceButtonLoading"
-                class="saveDatasourceButton btn btn-warning"
+                className="saveDatasourceButton btn btn-warning"
                 disabled
               >
-                <div class="spinner-border spinner-border-sm"></div>
+                <div className="spinner-border spinner-border-sm"></div>
               </button>
             </div>
           </div>

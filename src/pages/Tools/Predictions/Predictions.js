@@ -162,7 +162,7 @@ class Predictions extends Component {
                 />
               </div>
 
-              <div class="wrappers">
+              <div className="wrappers">
                 <Datasource
                   getSelectedDatasource={handleClickSavedConnection}
                 />

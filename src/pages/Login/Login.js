@@ -47,13 +47,13 @@ export default class Login extends Component {
     document.body.style = "background-color: rgb(11, 122, 192);";
 
     return (
-      <div class="login-page">
-        <div class="login-form">
+      <div className="login-page">
+        <div className="login-form">
           <form onSubmit={this.handleSubmit}>
-            <h2 class="text-center">Login</h2>
-            <div class="form-group has-error">
+            <h2 className="text-center">Login</h2>
+            <div className="form-group has-error">
               <input
-                class="form-control"
+                className="form-control"
                 name="username"
                 placeholder="Username"
                 value={this.state.username}
@@ -61,9 +61,9 @@ export default class Login extends Component {
                 required
               />
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <input
-                class="form-control"
+                className="form-control"
                 type="password"
                 name="password"
                 placeholder="Password"
@@ -72,12 +72,12 @@ export default class Login extends Component {
                 required
               />
             </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-lg btn-block">
+            <div className="form-group">
+              <button type="submit" className="btn btn-primary btn-lg btn-block">
                 Sign in
               </button>
             </div>
-            <p class="text-center small">
+            <p className="text-center small">
               Don't have an account? <a href="#">Sign up here!</a>
             </p>
           </form>

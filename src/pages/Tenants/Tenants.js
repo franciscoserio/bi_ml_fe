@@ -91,22 +91,22 @@ class Tenants extends Component {
             {this.state.loadingTenants === 1 ? (
               <Loading />
             ) : (
-              <div class="tenants_page">
+              <div className="tenants_page">
                 {this.state.tenants.map((tenant, index) => (
-                  <div class="tenant_box" key={index}>
+                  <div className="tenant_box" key={index}>
                     <p>{tenant["name"]}</p>
                     <img
-                      class="select"
+                      className="select"
                       src={select}
                       width="40px"
                       height="40px"
                     />
-                    <img class="see" src={see} width="40px" height="40px" />
+                    <img className="see" src={see} width="40px" height="40px" />
                   </div>
                 ))}
 
-                <div class="tenant_box">
-                  <p class="add_tenant">+</p>
+                <div className="tenant_box">
+                  <p className="add_tenant">+</p>
                 </div>
               </div>
             )}

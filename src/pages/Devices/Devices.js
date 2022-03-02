@@ -5,6 +5,7 @@ import Datatable from "../../components/datatable/Datatable";
 import Loading from "../../components/loading/Loading";
 import "./Devices.css";
 import API from "../../utils/callAPI";
+import useWebSocket from 'react-use-websocket';
 
 class Devices extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class Devices extends Component {
       activeDevices: 0,
       inactiveDevices: 0,
       createdDevicesLastWeek: 0,
+      ws: null
     };
   }
 
@@ -61,6 +63,75 @@ class Devices extends Component {
     this.setInactiveDevices();
     this.setCreatedDevicesLastWeek();
   }
+
+  editDevice(obj) {
+    var updated_device_list = this.state.devices;
+    updated_device_list.forEach(function(e) {
+      if (obj.id == e.id) {
+        for(var i in obj) e[i] = obj[i]
+      }
+    })
+    this.setState({ devices: updated_device_list });
+  }
+
+  timeout = 250; // Initial timeout duration as a class variable
+
+  /**
+  * @function connect
+  * This function establishes the connect with the websocket and also ensures constant reconnection if connection closes
+ */
+  connectWebsocket = () => {
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMGI4YzY5ZDItZjhhMS00NTNhLWIzYTItNDVmY2RkZWUzMDBiIiwidXNlcm5hbWUiOiJ1c2VyMUBlbWFpbC5jb20iLCJleHAiOjE2NDY0Mjg3NzYsImVtYWlsIjoidXNlcjFAZW1haWwuY29tIn0.ukecHVa1lFPiJGyWmEv2arTvNh8HhkVh84wVoSDTen8"
+    var ws = new WebSocket("ws://localhost:8000/ws/88427b1d-a0f0-491e-9a35-7903e9460de1/devices?authorization=" + token);
+    let that = this; // cache the this
+    var connectInterval;
+
+    // websocket onopen event listener
+    ws.onopen = () => {
+        console.log("connected websocket main component");
+
+        this.setState({ ws: ws });
+
+        that.timeout = 250; // reset timer to 250 on open of websocket connection 
+        clearTimeout(connectInterval); // clear Interval on on open of websocket connection
+    };
+
+    ws.onmessage = evt => {
+        // listen to data sent from the websocket server
+        const message = JSON.parse(evt.data)
+        this.editDevice(message["message"]["message"])
+    }
+
+    // websocket onclose event listener
+    ws.onclose = e => {
+        console.log(
+            `Socket is closed. Reconnect will be attempted in ${Math.min(
+                10000 / 1000,
+                (that.timeout + that.timeout) / 1000
+            )} second.`,
+            e.reason
+        );
+
+        that.timeout = that.timeout + that.timeout; //increment retry interval
+        connectInterval = setTimeout(this.check, Math.min(10000, that.timeout)); //call check function after timeout
+    };
+
+    // websocket onerror event listener
+    ws.onerror = err => {
+        console.error(
+            "Socket encountered error: ",
+            err.message,
+            "Closing socket"
+        );
+
+        ws.close();
+    };
+  }
+
+  check = () => {
+      const { ws } = this.state;
+      if (!ws || ws.readyState == WebSocket.CLOSED) this.connect(); //check if websocket instance is closed, if so call `connect` function.
+  };
 
   async getDevices() {
     var devicesList = [];
@@ -109,6 +180,7 @@ class Devices extends Component {
 
   componentWillMount() {
     this.getDevices();
+    this.connectWebsocket();
     this.setState({ loading: 0 });
   }
 
@@ -125,51 +197,51 @@ class Devices extends Component {
             {this.state.loadingDevices === 1 ? (
               <Loading />
             ) : (
-              <div class="devices_page">
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-md-4 col-xl-3">
-                      <div class="card bg-c-blue order-card">
-                        <div class="card-block">
-                          <h6 class="m-b-20">Total Devices</h6>
-                          <h2 class="text-right">
-                            <i class="fas fa-thermometer-quarter f-left"></i>
+              <div className="devices_page">
+                <div className="container-fluid">
+                  <div className="row">
+                    <div className="col-md-4 col-xl-3">
+                      <div className="card bg-c-blue order-card">
+                        <div className="card-block">
+                          <h6 className="m-b-20">Total Devices</h6>
+                          <h2 className="text-right">
+                            <i className="fas fa-thermometer-quarter f-left"></i>
                             <span>{this.state.totalDevices}</span>
                           </h2>
                         </div>
                       </div>
                     </div>
 
-                    <div class="col-md-4 col-xl-3">
-                      <div class="card bg-c-green order-card">
-                        <div class="card-block">
-                          <h6 class="m-b-20">Active Devices</h6>
-                          <h2 class="text-right">
-                            <i class="fas fa-toggle-on f-left"></i>
+                    <div className="col-md-4 col-xl-3">
+                      <div className="card bg-c-green order-card">
+                        <div className="card-block">
+                          <h6 className="m-b-20">Active Devices</h6>
+                          <h2 className="text-right">
+                            <i className="fas fa-toggle-on f-left"></i>
                             <span>{this.state.activeDevices}</span>
                           </h2>
                         </div>
                       </div>
                     </div>
 
-                    <div class="col-md-4 col-xl-3">
-                      <div class="card bg-c-pink order-card">
-                        <div class="card-block">
-                          <h6 class="m-b-20">Inactive Devices</h6>
-                          <h2 class="text-right">
-                            <i class="fas fa-toggle-off f-left"></i>
+                    <div className="col-md-4 col-xl-3">
+                      <div className="card bg-c-pink order-card">
+                        <div className="card-block">
+                          <h6 className="m-b-20">Inactive Devices</h6>
+                          <h2 className="text-right">
+                            <i className="fas fa-toggle-off f-left"></i>
                             <span>{this.state.inactiveDevices}</span>
                           </h2>
                         </div>
                       </div>
                     </div>
 
-                    <div class="col-md-4 col-xl-3">
-                      <div class="card bg-c-yellow order-card">
-                        <div class="card-block">
-                          <h6 class="m-b-20">Created Devices Last Week</h6>
-                          <h2 class="text-right">
-                            <i class="fa fa-plus f-left"></i>
+                    <div className="col-md-4 col-xl-3">
+                      <div className="card bg-c-yellow order-card">
+                        <div className="card-block">
+                          <h6 className="m-b-20">Created Devices Last Week</h6>
+                          <h2 className="text-right">
+                            <i className="fa fa-plus f-left"></i>
                             <span>{this.state.createdDevicesLastWeek}</span>
                           </h2>
                         </div>
@@ -177,8 +249,8 @@ class Devices extends Component {
                     </div>
                   </div>
 
-                  <div class="row">
-                    <div class="col-md-12">
+                  <div className="row">
+                    <div className="col-md-12">
                       <Datatable devices={this.state.devices} />
                     </div>
                   </div>

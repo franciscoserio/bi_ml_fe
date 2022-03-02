@@ -27,17 +27,17 @@ class Tenants extends Component {
     return (
       <div>
         <div className="topbar">
-          <div class="title">
+          <div className="title">
             <h1>{this.props.title}</h1>
           </div>
-          <div class="signout">
-            <a class="icons">
+          <div className="signout">
+            <a className="icons">
               <img src={search} height="35px" />
             </a>
-            <a class="icons">
+            <a className="icons">
               <img src={notifications} height="35px" />
             </a>
-            <a class="icons" onClick={this.logout}>
+            <a className="icons" onClick={this.logout}>
               <img src={signout} height="35px" />
             </a>
           </div>
