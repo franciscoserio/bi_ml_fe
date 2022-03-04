@@ -1,22 +1,19 @@
 .mdb-datatable table {
-  border-collapse: separate;
-  border-spacing: 0px 10px;
+  border-collapse: collapse;
 }
 .mdb-datatable table tbody td {
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #ccc;
-
+  padding: 10px;
   background-color: white;
 }
 
 .mdb-datatable table tbody td:first-child {
   border-left: 1px solid #ccc;
-  border-radius: 10px 0px 0px 10px;
 }
 
 .mdb-datatable table tbody td:last-child {
   border-right: 1px solid #ccc;
-  border-radius: 0px 10px 10px 0px;
 }
 
 .deviceListStatus {

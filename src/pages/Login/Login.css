@@ -52,3 +52,7 @@
 .login-form form a:hover {
   text-decoration: underline;
 }
+
+.alert {
+  display: block;
+}

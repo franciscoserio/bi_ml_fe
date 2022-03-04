@@ -58,3 +58,9 @@
 .devices_page .f-right {
   float: right;
 }
+
+.create-device {
+  position: absolute;
+  right: 20px;
+  font-weight: bold;
+}

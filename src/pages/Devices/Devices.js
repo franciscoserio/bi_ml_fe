@@ -3,9 +3,9 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Topbar from "../../components/topbar/Topbar";
 import Datatable from "../../components/datatable/Datatable";
 import Loading from "../../components/loading/Loading";
+import Menu from "../../components/devices/Devices";
 import "./Devices.css";
 import API from "../../utils/callAPI";
-import useWebSocket from 'react-use-websocket';
 
 class Devices extends Component {
   constructor(props) {
@@ -30,31 +30,38 @@ class Devices extends Component {
   }
 
   setActiveDevices() {
+    var activeDevices = 0;
     for (var i = 0; i < this.state.devices.length; i++) {
-      if (this.state.devices[i]["status"] === "active") {
-        this.setState({ activeDevices: this.state.activeDevices + 1 });
+      if (this.state.devices[i]["is_active"] === true) {
+        activeDevices = activeDevices + 1;
       }
     }
+    this.setState({ activeDevices: activeDevices });
   }
 
   setInactiveDevices() {
+    var inactiveDevices = 0;
     for (var i = 0; i < this.state.devices.length; i++) {
-      if (this.state.devices[i]["status"] != "active") {
-        this.setState({ inactiveDevices: this.state.inactiveDevices + 1 });
+      if (this.state.devices[i]["is_active"] === false) {
+        inactiveDevices = inactiveDevices + 1;
       }
     }
+    this.setState({ inactiveDevices: inactiveDevices });
   }
 
   setCreatedDevicesLastWeek() {
     var now = new Date();
+    var createdDevicesLastWeek = 0;
     for (var i = 0; i < this.state.devices.length; i++) {
       var created_at = new Date(this.state.devices[i]["created_at"]);
       if (now - created_at <= 604800000) {
-        this.setState({
-          createdDevicesLastWeek: this.state.createdDevicesLastWeek + 1,
-        });
+        createdDevicesLastWeek = createdDevicesLastWeek + 1;
+        
       }
     }
+    this.setState({
+        createdDevicesLastWeek: createdDevicesLastWeek
+      });
   }
 
   setStatistics() {
@@ -64,13 +71,18 @@ class Devices extends Component {
     this.setCreatedDevicesLastWeek();
   }
 
-  editDevice(obj) {
+  AddOrEditDevice(obj) {
+    var newDevice = true
     var updated_device_list = this.state.devices;
     updated_device_list.forEach(function(e) {
-      if (obj.id == e.id) {
+      if (obj.id === e.id) {
         for(var i in obj) e[i] = obj[i]
+        newDevice = false
       }
     })
+    if (newDevice !== false) {
+      updated_device_list.push(obj); 
+    }
     this.setState({ devices: updated_device_list });
   }
 
@@ -98,8 +110,9 @@ class Devices extends Component {
 
     ws.onmessage = evt => {
         // listen to data sent from the websocket server
-        const message = JSON.parse(evt.data)
-        this.editDevice(message["message"]["message"])
+        const message = JSON.parse(evt.data);
+        this.AddOrEditDevice(message["message"]["message"]);
+        this.setStatistics();
     }
 
     // websocket onclose event listener
@@ -130,7 +143,7 @@ class Devices extends Component {
 
   check = () => {
       const { ws } = this.state;
-      if (!ws || ws.readyState == WebSocket.CLOSED) this.connect(); //check if websocket instance is closed, if so call `connect` function.
+      if (!ws || ws.readyState === WebSocket.CLOSED) this.connectWebsocket(); //check if websocket instance is closed, if so call `connect` function.
   };
 
   async getDevices() {
@@ -178,7 +191,7 @@ class Devices extends Component {
     return devicesList;
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.getDevices();
     this.connectWebsocket();
     this.setState({ loading: 0 });
@@ -251,6 +264,9 @@ class Devices extends Component {
 
                   <div className="row">
                     <div className="col-md-12">
+                      <button type="button" data-bs-toggle="modal-create-devic" className="create-device btn btn-primary">
+                        <i className="fa fa-plus"></i> Create
+                      </button>
                       <Datatable devices={this.state.devices} />
                     </div>
                   </div>

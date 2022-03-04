@@ -9,7 +9,8 @@ export default class Login extends Component {
     super(props);
 
     this.state = {
-      username: "",
+      incorrectCredentials: false,
+      email: "",
       password: "",
     };
 
@@ -24,20 +25,23 @@ export default class Login extends Component {
   }
 
   handleSubmit(event) {
-    const { username, password } = this.state;
+
+    this.setState({ incorrectCredentials: false });
+
+    const { email, password } = this.state;
     const cookies = new Cookies();
 
-    API.Login(username, password)
+    API.Login(email, password)
       .then((response) => {
         if (response["status"] === 200) {
           // set cookies with token and roles
           cookies.set("token", response["data"]["token"], { maxAge: 31536000 });
-
           window.location = "/tenants";
+          this.setState({ incorrectCredentials: false });
         }
       })
       .catch((error) => {
-        console.log("login errado");
+        this.setState({ incorrectCredentials: true });
       });
     event.preventDefault();
   }
@@ -45,18 +49,25 @@ export default class Login extends Component {
   render() {
     // background color
     document.body.style = "background-color: rgb(11, 122, 192);";
-
     return (
       <div className="login-page">
         <div className="login-form">
           <form onSubmit={this.handleSubmit}>
-            <h2 className="text-center">Login</h2>
+
+          <h2 className="text-center">Login</h2>
+
+          {this.state.incorrectCredentials === true &&
+            <div className="alert alert-danger" role="alert">
+              Incorrect credentials
+            </div>}
+
             <div className="form-group has-error">
               <input
                 className="form-control"
-                name="username"
-                placeholder="Username"
-                value={this.state.username}
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={this.state.email}
                 onChange={this.handleChange}
                 required
               />
